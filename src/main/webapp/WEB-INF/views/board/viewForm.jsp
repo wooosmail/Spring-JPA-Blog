@@ -5,30 +5,33 @@
 <%@ include file="../layout/header.jsp"%>
 
 <div class="container">
-
-    <form >
-
+    <div>
+         글쓴이 : ${board.user.userId}
+         글번호 : <span id ="id">${board.boardId}</span>
+    </div>
+    <br><br>
         <div class="form-group">
             <label for="title">Title</label>
-            <input type="text" class="form-control"  id="title" name="title">
+            <h3> ${board.title}</h3>
         </div>
 
 
         <div class="form-group">
             <label for="content">Comment:</label>
-            <textarea class="form-control summernote" rows="5" id="content" name="text"></textarea>
+            <div>
+                ${board.content}
+            </div>
         </div>
+        <hr 1>
 
 
-    </form>
-    <button id="btn-board-save" class="btn btn-primary">글쓰기</button>
+    <button id="btn-board-warning" class="btn btn-primary">수정</button>
+    <button id="btn-board-secondary" class="btn btn-primary">삭제</button>
+    <button id="btn-board-success" class="btn btn-primary" onclick="history.back()">이전</button>
 
 </div>
 <script>
-    $('.summernote').summernote({
-        tabsize: 2,
-        height: 300
-    });
+
 </script>
 <script src="/js/board.js" ></script>
 <%@ include file="../layout/footer.jsp"%>
